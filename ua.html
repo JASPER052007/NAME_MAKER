@@ -1,1 +1,26 @@
+<html>
+<head>
+    <title>User Agent Generator</title>
+</head>
+<body>
+    <label for="userAgentCount">How many user agents do you want to generate?</label>
+    <input type="number" id="userAgentCount">
+    <button onclick="generateUserAgents()">Generate User Agents</button>
+    <ul id="userAgentsList"></ul>
 
+    <script>
+        function generateUserAgents() {
+            const count = document.getElementById('userAgentCount').value;
+            const userAgentsList = document.getElementById('userAgentsList');
+            userAgentsList.innerHTML = '';
+
+            for (let i = 0; i < count; i++) {
+                const userAgent = `User Agent ${i + 1}`;
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(userAgent));
+                userAgentsList.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
